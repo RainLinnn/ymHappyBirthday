@@ -52,27 +52,12 @@
 <body>
     <h2>Happy Birrrrrthday</h2>
     <h1>小苗同学</h1>
-    <audio id="backgroundMusic" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/605876/happy-birthday-trimmed.mp3"
-        preload="auto"></audio>
+    <audio id="bgmusic" autoplay loop>
+        <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/605876/happy-birthday-trimmed.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     <canvas id="confetti"></canvas>
     <script>
-        // 获取音频元素
-        const audio = document.getElementById('backgroundMusic');
-
-        // 检查是否支持自动播放
-        if ('autoplay' in audio) {
-            // 如果支持，设置为自动播放并循环播放
-            audio.loop = true;
-            audio.autoplay = true;
-
-            // 触发播放
-            audio.play();
-        } else {
-            // 如果不支持，可以尝试在用户与页面交互后再播放
-            window.addEventListener('DOMContentLoaded', () => {
-                audio.play();
-            });
-        }
         var retina = window.devicePixelRatio,
 
             // Math shorthands
